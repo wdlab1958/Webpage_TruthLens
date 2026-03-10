@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="TruthLens v2.8.0 - 차세대 멀티모달 에이전틱 AI 기반 딥페이크 탐지 시스템. LangGraph, CrewAI, AutoGen, Ollama를 활용한 고정밀 딥페이크 검출.">
+    <title>TruthLens DeepFake Detection System v2.8.0</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-logo">
+                <span class="logo-icon">&#x1F50D;</span>
+                <span class="logo-text">TruthLens</span>
+                <span class="nav-version">v2.8.0</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="#features" class="nav-link" data-i18n="nav.features">Features</a></li>
+                <li><a href="#agents" class="nav-link" data-i18n="nav.agents">Agentic AI</a></li>
+                <li><a href="#dashboard" class="nav-link" data-i18n="nav.dashboard">Dashboard</a></li>
+                <li><a href="#detection" class="nav-link" data-i18n="nav.detection">Detection</a></li>
+                <li><a href="#architecture" class="nav-link" data-i18n="nav.architecture">Architecture</a></li>
+            </ul>
+            <div class="nav-actions">
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button class="lang-switch-btn active" data-lang="ko" onclick="applyLanguage('ko')">KO</button>
+                    <button class="lang-switch-btn" data-lang="en" onclick="applyLanguage('en')">EN</button>
+                </div>
+                <a href="#dashboard" class="btn-primary" data-i18n="nav.btn.dashboard">Dashboard</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text" data-i18n="hero.badge">LangGraph + CrewAI + AutoGen + Ollama</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line" data-i18n="hero.title1">TruthLens</span>
+                <span class="title-line gradient-text" data-i18n="hero.title2">DeepFake Detection</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span data-i18n="hero.subtitle">3-Triple Multi-Agentic AI Framework</span><br>
+                <span data-i18n="hero.subtitle2">React Dashboard &middot; Real-time BI &middot; ADAG Red Team</span>
+            </p>
+            <div class="hero-cta">
+                <a href="#dashboard" class="btn-glow">
+                    <span data-i18n="hero.btn.dashboard">Dashboard Preview</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="#agents" class="btn-outline">
+                    <span data-i18n="hero.btn.agents">Agentic AI</span>
+                </a>
+            </div>
+            <div class="hero-trust-badges">
+                <div class="trust-badge">
+                    <span class="trust-icon">&#x2713;</span>
+                    <span data-i18n="hero.trust.tests">89/89 Tests PASS</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-icon">&#x2713;</span>
+                    <span data-i18n="hero.trust.modules">7 Detection Modules</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-icon">&#x2713;</span>
+                    <span data-i18n="hero.trust.pages">14 Dashboard Pages</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-icon">&#x2713;</span>
+                    <span data-i18n="hero.trust.apis">45 REST APIs</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="features-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="features.title">Core Differentiators</h2>
+                <p class="section-subtitle" data-i18n="features.subtitle">TruthLens v2.8.0 - 6 Core Strengths</p>
+            </div>
+
+            <div class="differentiators-grid">
+                <div class="diff-card glass-card">
+                    <div class="diff-icon">&#x1F49C;</div>
+                    <h3 class="diff-title" data-i18n="feat.bio.title">Biological Signal Verification</h3>
+                    <p class="diff-desc" data-i18n="feat.bio.desc">rPPG heart rate extraction and eye blink pattern analysis detect physiologically impossible patterns - the strongest evidence against deepfakes.</p>
+                    <div class="diff-highlight" data-i18n="feat.bio.highlight">Most reliable evidence</div>
+                </div>
+                <div class="diff-card glass-card">
+                    <div class="diff-icon">&#x1F916;</div>
+                    <h3 class="diff-title" data-i18n="feat.triple.title">Triple Agentic AI</h3>
+                    <p class="diff-desc" data-i18n="feat.triple.desc">LangGraph orchestration + CrewAI 6-expert consensus + AutoGen adversarial debate - three frameworks working in concert.</p>
+                    <div class="diff-highlight" data-i18n="feat.triple.highlight">3 AI Frameworks</div>
+                </div>
+                <div class="diff-card glass-card">
+                    <div class="diff-icon">&#x1F512;</div>
+                    <h3 class="diff-title" data-i18n="feat.privacy.title">Privacy Guaranteed</h3>
+                    <p class="diff-desc" data-i18n="feat.privacy.desc">Ollama-based local LLM/VLM inference ensures zero data transmission to external servers. Safe for sensitive data.</p>
+                    <div class="diff-highlight" data-i18n="feat.privacy.highlight">100% Local Processing</div>
+                </div>
+                <div class="diff-card glass-card">
+                    <div class="diff-icon">&#x1F4A1;</div>
+                    <h3 class="diff-title" data-i18n="feat.xai.title">Explainable AI (XAI)</h3>
+                    <p class="diff-desc" data-i18n="feat.xai.desc">Every verdict includes LLM-generated detailed explanation and evidence chain for full transparency.</p>
+                    <div class="diff-highlight" data-i18n="feat.xai.highlight">Evidence Chain</div>
+                </div>
+                <div class="diff-card glass-card">
+                    <div class="diff-icon">&#x1F6E1;&#xFE0F;</div>
+                    <h3 class="diff-title" data-i18n="feat.adag.title">ADAG Red Team</h3>
+                    <p class="diff-desc" data-i18n="feat.adag.desc">Adversarial testing framework with 4 attack modules automatically verifies detection robustness via Red-Blue Team feedback loop.</p>
+                    <div class="diff-highlight" data-i18n="feat.adag.highlight">4 Attack Modules</div>
+                </div>
+                <div class="diff-card glass-card">
+                    <div class="diff-icon">&#x26A1;</div>
+                    <h3 class="diff-title" data-i18n="feat.realtime.title">Real-time Processing</h3>
+                    <p class="diff-desc" data-i18n="feat.realtime.desc">Send() parallel dispatch, async architecture, MemorySaver checkpoint for fault-tolerant real-time analysis.</p>
+                    <div class="diff-highlight" data-i18n="feat.realtime.highlight">60% faster</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Agent Frameworks Section -->
+    <section id="agents" class="agents-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="agents.title">Triple Agentic AI</h2>
+                <p class="section-subtitle" data-i18n="agents.subtitle">LangGraph + CrewAI + AutoGen - 3 frameworks in synergy</p>
+            </div>
+
+            <!-- LangGraph -->
+            <div class="agent-block">
+                <div class="agent-header-row">
+                    <div class="agent-badge langgraph">1</div>
+                    <h3 class="agent-block-title" data-i18n="agent.lg.title">LangGraph &mdash; Workflow Orchestration</h3>
+                </div>
+                <div class="agent-content-grid">
+                    <div class="agent-text">
+                        <p class="agent-desc" data-i18n="agent.lg.desc">17-node async StateGraph pipeline with Send() parallel dispatch for 5 analysis nodes running simultaneously. MemorySaver checkpoint enables fault recovery. Human-in-the-Loop (HITL) for uncertain zone review.</p>
+                        <div class="agent-specs">
+                            <div class="spec-item">
+                                <span class="spec-label" data-i18n="agent.lg.nodes">Nodes</span>
+                                <span class="spec-value">17</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label" data-i18n="agent.lg.parallel">Parallel</span>
+                                <span class="spec-value" data-i18n="agent.lg.parallel.val">5 agents</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label" data-i18n="agent.lg.speedup">Speedup</span>
+                                <span class="spec-value">60%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agent-visual">
+                        <div class="pipeline-flow glass-card">
+                            <div class="pipeline-node node-start">Preprocess</div>
+                            <div class="pipeline-arrow">&#x2193;</div>
+                            <div class="pipeline-parallel">
+                                <div class="pipeline-node node-agent">Visual</div>
+                                <div class="pipeline-node node-agent">Audio</div>
+                                <div class="pipeline-node node-agent">Bio</div>
+                                <div class="pipeline-node node-agent">OCR</div>
+                                <div class="pipeline-node node-agent">A/V Sync</div>
+                            </div>
+                            <div class="pipeline-arrow">&#x2193;</div>
+                            <div class="pipeline-node node-fusion">Fusion</div>
+                            <div class="pipeline-arrow">&#x2193;</div>
+                            <div class="pipeline-node node-xai">XAI + HITL</div>
+                            <div class="pipeline-arrow">&#x2193;</div>
+                            <div class="pipeline-node node-verdict">Verdict</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CrewAI -->
+            <div class="agent-block">
+                <div class="agent-header-row">
+                    <div class="agent-badge crewai">2</div>
+                    <h3 class="agent-block-title" data-i18n="agent.crew.title">CrewAI &mdash; 6-Expert Consensus Panel</h3>
+                </div>
+                <div class="agent-content-grid">
+                    <div class="agent-visual">
+                        <div class="crew-panel glass-card">
+                            <div class="crew-experts">
+                                <div class="crew-expert">
+                                    <span class="crew-icon">&#x1F441;&#xFE0F;</span>
+                                    <span class="crew-name" data-i18n="agent.crew.visual">Visual Forensics</span>
+                                </div>
+                                <div class="crew-expert">
+                                    <span class="crew-icon">&#x1F3B5;</span>
+                                    <span class="crew-name" data-i18n="agent.crew.audio">Audio Forensics</span>
+                                </div>
+                                <div class="crew-expert">
+                                    <span class="crew-icon">&#x1F49C;</span>
+                                    <span class="crew-name" data-i18n="agent.crew.bio">Biometric</span>
+                                </div>
+                                <div class="crew-expert">
+                                    <span class="crew-icon">&#x1F4DD;</span>
+                                    <span class="crew-name" data-i18n="agent.crew.ocr">OCR/Document</span>
+                                </div>
+                                <div class="crew-expert">
+                                    <span class="crew-icon">&#x1F444;</span>
+                                    <span class="crew-name" data-i18n="agent.crew.avsync">A/V Sync</span>
+                                </div>
+                                <div class="crew-expert chief">
+                                    <span class="crew-icon">&#x1F451;</span>
+                                    <span class="crew-name" data-i18n="agent.crew.chief">Chief Analyst</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agent-text">
+                        <p class="agent-desc" data-i18n="agent.crew.desc">6 specialized expert agents analyze evidence independently, then the Chief Analyst synthesizes all findings for the final verdict. Supports Sequential and Hierarchical process modes with SQLite memory backend for learning from past judgments.</p>
+                        <div class="agent-specs">
+                            <div class="spec-item">
+                                <span class="spec-label" data-i18n="agent.crew.experts">Experts</span>
+                                <span class="spec-value">6</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label" data-i18n="agent.crew.memory">Memory</span>
+                                <span class="spec-value">SQLite</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label" data-i18n="agent.crew.model">Model</span>
+                                <span class="spec-value">llama3.2:3b</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AutoGen -->
+            <div class="agent-block">
+                <div class="agent-header-row">
+                    <div class="agent-badge autogen">3</div>
+                    <h3 class="agent-block-title" data-i18n="agent.ag.title">AutoGen &mdash; Adversarial Debate System</h3>
+                </div>
+                <div class="agent-content-grid">
+                    <div class="agent-text">
+                        <p class="agent-desc" data-i18n="agent.ag.desc">When fusion scores fall in the uncertain zone (0.35~0.65), adversarial debate automatically triggers. Prosecutor argues FAKE, Defense argues REAL, and Judge renders the final verdict. Supports 1v1 and 6-person GroupChat modes.</p>
+                        <div class="agent-specs">
+                            <div class="spec-item">
+                                <span class="spec-label" data-i18n="agent.ag.trigger">Trigger</span>
+                                <span class="spec-value">0.35~0.65</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label" data-i18n="agent.ag.avgtime">Avg Time</span>
+                                <span class="spec-value">~19s</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label" data-i18n="agent.ag.modes">Modes</span>
+                                <span class="spec-value" data-i18n="agent.ag.modes.val">1v1 / Group</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agent-visual">
+                        <div class="debate-visual glass-card">
+                            <div class="debate-row">
+                                <div class="debate-agent prosecutor">
+                                    <span class="debate-icon">&#x2694;&#xFE0F;</span>
+                                    <span data-i18n="agent.ag.prosecutor">Prosecutor</span>
+                                    <span class="debate-stance">FAKE</span>
+                                </div>
+                                <div class="debate-vs">VS</div>
+                                <div class="debate-agent defense">
+                                    <span class="debate-icon">&#x1F6E1;&#xFE0F;</span>
+                                    <span data-i18n="agent.ag.defense">Defense</span>
+                                    <span class="debate-stance">REAL</span>
+                                </div>
+                            </div>
+                            <div class="debate-arrow">&#x2193;</div>
+                            <div class="debate-agent judge">
+                                <span class="debate-icon">&#x2696;&#xFE0F;</span>
+                                <span data-i18n="agent.ag.judge">Judge</span>
+                                <span class="debate-stance" data-i18n="agent.ag.verdict">VERDICT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="dash.title">React Dashboard</h2>
+                <p class="section-subtitle" data-i18n="dash.subtitle">14 pages &middot; Real-time BI &middot; WebSocket &middot; 45 REST APIs</p>
+            </div>
+
+            <div class="dashboard-preview">
+                <!-- Sidebar -->
+                <div class="preview-sidebar glass-card">
+                    <div class="sidebar-logo">
+                        <span>&#x1F50D;</span> TruthLens
+                    </div>
+                    <div class="sidebar-section">
+                        <div class="sidebar-section-title" data-i18n="dash.sidebar.detection">Detection</div>
+                        <div class="sidebar-item active" data-page="analyze">
+                            <span class="sidebar-icon">&#x1F4CA;</span> <span data-i18n="dash.sidebar.analyze">Analyze</span>
+                        </div>
+                        <div class="sidebar-item" data-page="history">
+                            <span class="sidebar-icon">&#x1F4C4;</span> <span data-i18n="dash.sidebar.history">History</span>
+                        </div>
+                        <div class="sidebar-item" data-page="bi">
+                            <span class="sidebar-icon">&#x1F4C8;</span> <span data-i18n="dash.sidebar.bi">BI Dashboard</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-section">
+                        <div class="sidebar-section-title" data-i18n="dash.sidebar.management">Management</div>
+                        <div class="sidebar-item" data-page="admin">
+                            <span class="sidebar-icon">&#x1F464;</span> <span data-i18n="dash.sidebar.admin">Admin</span>
+                        </div>
+                        <div class="sidebar-item" data-page="organizations">
+                            <span class="sidebar-icon">&#x1F3E2;</span> <span data-i18n="dash.sidebar.orgs">Organizations</span>
+                        </div>
+                        <div class="sidebar-item" data-page="apikeys">
+                            <span class="sidebar-icon">&#x1F511;</span> <span data-i18n="dash.sidebar.apikeys">API Keys</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-section">
+                        <div class="sidebar-section-title" data-i18n="dash.sidebar.agenticai">Agentic AI</div>
+                        <div class="sidebar-item" data-page="agent-settings">
+                            <span class="sidebar-icon">&#x2699;&#xFE0F;</span> <span data-i18n="dash.sidebar.agentsettings">Agent Settings</span>
+                        </div>
+                        <div class="sidebar-item" data-page="autogen">
+                            <span class="sidebar-icon">&#x1F4AC;</span> <span data-i18n="dash.sidebar.autogen">AutoGen Debate</span>
+                        </div>
+                        <div class="sidebar-item" data-page="llm">
+                            <span class="sidebar-icon">&#x1F9E0;</span> <span data-i18n="dash.sidebar.llm">LLM / Ollama</span>
+                        </div>
+                        <div class="sidebar-item" data-page="adag">
+                            <span class="sidebar-icon">&#x1F6E1;&#xFE0F;</span> <span data-i18n="dash.sidebar.adag">ADAG Red Team</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-section">
+                        <div class="sidebar-section-title" data-i18n="dash.sidebar.system">System</div>
+                        <div class="sidebar-item" data-page="settings">
+                            <span class="sidebar-icon">&#x2699;&#xFE0F;</span> <span data-i18n="dash.sidebar.settings">Settings</span>
+                        </div>
+                        <div class="sidebar-item" data-page="api-docs">
+                            <span class="sidebar-icon">&#x1F4DA;</span> <span data-i18n="dash.sidebar.apidocs">API Docs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workspace -->
+                <div class="preview-workspace">
+                    <!-- Analyze Page -->
+                    <div class="workspace-page active" id="page-analyze">
+                        <div class="workspace-header">
+                            <h3 data-i18n="dash.analyze.title">Media Analysis</h3>
+                            <div class="analysis-modes">
+                                <button class="mode-btn" data-i18n="dash.analyze.rapid">Rapid</button>
+                                <button class="mode-btn active" data-i18n="dash.analyze.standard">Standard</button>
+                                <button class="mode-btn" data-i18n="dash.analyze.precise">Precise</button>
+                            </div>
+                        </div>
+                        <div class="dropzone glass-card">
+                            <div class="dropzone-icon">&#x2601;&#xFE0F;</div>
+                            <p class="dropzone-text" data-i18n="dash.analyze.dropzone">Drag & Drop media files here</p>
+                            <p class="dropzone-sub" data-i18n="dash.analyze.formats">Video (MP4, AVI, MOV) &middot; Image (JPG, PNG) &middot; Audio (MP3, WAV)</p>
+                            <p class="dropzone-limit" data-i18n="dash.analyze.maxsize">Max 500MB</p>
+                        </div>
+                        <div class="url-input-row">
+                            <input type="text" class="url-input" data-i18n-placeholder="dash.analyze.urlplaceholder" placeholder="YouTube / Video URL..." readonly>
+                            <button class="btn-analyze" data-i18n="dash.analyze.btn">Analyze</button>
+                        </div>
+                        <div class="workspace-info-cards">
+                            <div class="info-mini glass-card">
+                                <span class="info-mini-icon">&#x1F4F9;</span>
+                                <span data-i18n="dash.analyze.video">Video</span>
+                            </div>
+                            <div class="info-mini glass-card">
+                                <span class="info-mini-icon">&#x1F5BC;&#xFE0F;</span>
+                                <span data-i18n="dash.analyze.image">Image</span>
+                            </div>
+                            <div class="info-mini glass-card">
+                                <span class="info-mini-icon">&#x1F3B5;</span>
+                                <span data-i18n="dash.analyze.audio">Audio</span>
+                            </div>
+                            <div class="info-mini glass-card">
+                                <span class="info-mini-icon">&#x1F310;</span>
+                                <span>URL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BI Dashboard Page -->
+                    <div class="workspace-page" id="page-bi">
+                        <div class="workspace-header">
+                            <h3 data-i18n="dash.bi.title">BI Dashboard</h3>
+                            <span class="refresh-badge" data-i18n="dash.bi.refresh">Auto-refresh: 10s</span>
+                        </div>
+                        <div class="bi-kpi-row">
+                            <div class="kpi-card glass-card">
+                                <div class="kpi-value">1,247</div>
+                                <div class="kpi-label" data-i18n="dash.bi.total">Total Analyses</div>
+                            </div>
+                            <div class="kpi-card glass-card">
+                                <div class="kpi-value kpi-red">342</div>
+                                <div class="kpi-label" data-i18n="dash.bi.fakes">Fakes Detected</div>
+                            </div>
+                            <div class="kpi-card glass-card">
+                                <div class="kpi-value kpi-blue">6.3s</div>
+                                <div class="kpi-label" data-i18n="dash.bi.avg">Avg Response</div>
+                            </div>
+                            <div class="kpi-card glass-card">
+                                <div class="kpi-value kpi-green">92.5%</div>
+                                <div class="kpi-label" data-i18n="dash.bi.accuracy">Accuracy</div>
+                            </div>
+                        </div>
+                        <div class="bi-charts-row">
+                            <div class="chart-placeholder glass-card">
+                                <div class="chart-title" data-i18n="dash.bi.dailychart">Daily Requests (30 days)</div>
+                                <div class="chart-bars">
+                                    <div class="chart-bar" style="height:40%"></div>
+                                    <div class="chart-bar" style="height:55%"></div>
+                                    <div class="chart-bar" style="height:70%"></div>
+                                    <div class="chart-bar" style="height:45%"></div>
+                                    <div class="chart-bar" style="height:80%"></div>
+                                    <div class="chart-bar" style="height:65%"></div>
+                                    <div class="chart-bar" style="height:90%"></div>
+                                    <div class="chart-bar" style="height:75%"></div>
+                                    <div class="chart-bar" style="height:60%"></div>
+                                    <div class="chart-bar" style="height:85%"></div>
+                                </div>
+                            </div>
+                            <div class="chart-placeholder glass-card">
+                                <div class="chart-title" data-i18n="dash.bi.verdictchart">Verdict Distribution</div>
+                                <div class="pie-chart">
+                                    <div class="pie-segment pie-real">REAL 58%</div>
+                                    <div class="pie-segment pie-fake">FAKE 27%</div>
+                                    <div class="pie-segment pie-uncertain">UNCERTAIN 15%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- History Page -->
+                    <div class="workspace-page" id="page-history">
+                        <div class="workspace-header">
+                            <h3 data-i18n="dash.history.title">Analysis History</h3>
+                            <input type="text" class="search-input" data-i18n-placeholder="dash.history.search" placeholder="Search..." readonly>
+                        </div>
+                        <div class="history-table glass-card">
+                            <div class="table-header">
+                                <span data-i18n="dash.history.date">Date</span><span data-i18n="dash.history.type">Type</span><span data-i18n="dash.history.verdict">Verdict</span><span data-i18n="dash.history.confidence">Confidence</span><span data-i18n="dash.history.time">Time</span>
+                            </div>
+                            <div class="table-row">
+                                <span>2026-03-06 14:23</span><span>video</span><span class="verdict-fake">FAKE</span><span>85.3%</span><span>6.2s</span>
+                            </div>
+                            <div class="table-row">
+                                <span>2026-03-06 13:45</span><span>image</span><span class="verdict-real">REAL</span><span>92.1%</span><span>3.8s</span>
+                            </div>
+                            <div class="table-row">
+                                <span>2026-03-06 12:10</span><span>video</span><span class="verdict-uncertain">UNCERTAIN</span><span>54.7%</span><span>8.1s</span>
+                            </div>
+                            <div class="table-row">
+                                <span>2026-03-05 18:30</span><span>audio</span><span class="verdict-real">REAL</span><span>88.9%</span><span>4.5s</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agent Settings Page -->
+                    <div class="workspace-page" id="page-agent-settings">
+                        <div class="workspace-header"><h3 data-i18n="dash.agentsettings.title">Agent Settings</h3></div>
+                        <div class="settings-tabs">
+                            <button class="tab-btn active" data-i18n="dash.agentsettings.pipeline">Pipeline</button>
+                            <button class="tab-btn" data-i18n="dash.agentsettings.experts">Experts</button>
+                            <button class="tab-btn" data-i18n="dash.agentsettings.fusion">Fusion</button>
+                        </div>
+                        <div class="settings-content glass-card">
+                            <h4 data-i18n="dash.agentsettings.lgorch">LangGraph Pipeline Orchestration</h4>
+                            <div class="setting-row">
+                                <span data-i18n="dash.agentsettings.checkpoint">Enable Checkpoint</span>
+                                <div class="toggle off"></div>
+                            </div>
+                            <div class="setting-row">
+                                <span data-i18n="dash.agentsettings.hitl">Human Review (HITL)</span>
+                                <div class="toggle off"></div>
+                            </div>
+                            <div class="setting-row">
+                                <span data-i18n="dash.agentsettings.threshold">Review Threshold</span>
+                                <div class="slider-display">0.40</div>
+                            </div>
+                            <h4 style="margin-top:1rem" data-i18n="dash.agentsettings.activenodes">Active Nodes (12)</h4>
+                            <div class="node-grid">
+                                <span class="node-chip active">Preprocess</span>
+                                <span class="node-chip active">Visual</span>
+                                <span class="node-chip active">Audio</span>
+                                <span class="node-chip active">Biological</span>
+                                <span class="node-chip active">Fusion</span>
+                                <span class="node-chip active">AutoGen</span>
+                                <span class="node-chip active">XAI</span>
+                                <span class="node-chip active">Verdict</span>
+                                <span class="node-chip active">C2PA</span>
+                                <span class="node-chip active">SynthID</span>
+                                <span class="node-chip active">Forensic Log</span>
+                                <span class="node-chip active">Report</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AutoGen Debate Page -->
+                    <div class="workspace-page" id="page-autogen">
+                        <div class="workspace-header"><h3 data-i18n="dash.autogen.title">AutoGen Debate System</h3></div>
+                        <div class="settings-content glass-card">
+                            <h4 data-i18n="dash.autogen.config">Debate Configuration</h4>
+                            <div class="setting-row"><span data-i18n="dash.autogen.model">Model</span><span class="setting-val">llama3.2:3b</span></div>
+                            <div class="setting-row"><span data-i18n="dash.autogen.maxrounds">Max Rounds</span><span class="setting-val">3</span></div>
+                            <div class="setting-row"><span data-i18n="dash.autogen.mode">Mode</span><span class="setting-val">1v1</span></div>
+                            <div class="setting-row"><span data-i18n="dash.autogen.threshold">Threshold</span><span class="setting-val">0.35 ~ 0.65</span></div>
+                            <div class="setting-row"><span data-i18n="dash.autogen.always">Always Debate</span><div class="toggle off"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- LLM Settings Page -->
+                    <div class="workspace-page" id="page-llm">
+                        <div class="workspace-header"><h3 data-i18n="dash.llm.title">LLM / Ollama Settings</h3></div>
+                        <div class="settings-content glass-card">
+                            <div class="setting-row"><span data-i18n="dash.llm.serverurl">Server URL</span><span class="setting-val">http://localhost:11434</span></div>
+                            <div class="setting-row"><span data-i18n="dash.llm.status">Status</span><span class="status-connected" data-i18n="dash.llm.connected">Connected</span></div>
+                            <h4 style="margin-top:1rem" data-i18n="dash.llm.assignments">Model Assignments</h4>
+                            <div class="setting-row"><span data-i18n="dash.llm.llmmodel">LLM Model</span><span class="setting-val">llama3.2:3b</span></div>
+                            <div class="setting-row"><span data-i18n="dash.llm.vlmmodel">VLM Model</span><span class="setting-val">llama3.2-vision</span></div>
+                            <div class="setting-row"><span data-i18n="dash.llm.embedding">Embedding</span><span class="setting-val">nomic-embed-text</span></div>
+                            <h4 style="margin-top:1rem" data-i18n="dash.llm.performance">Performance</h4>
+                            <div class="setting-row"><span data-i18n="dash.llm.temperature">Temperature</span><span class="setting-val">0.10</span></div>
+                            <div class="setting-row"><span data-i18n="dash.llm.context">Context Window</span><span class="setting-val">4096</span></div>
+                        </div>
+                    </div>
+
+                    <!-- ADAG Red Team Page -->
+                    <div class="workspace-page" id="page-adag">
+                        <div class="workspace-header"><h3 data-i18n="dash.adag.title">ADAG Red Team</h3></div>
+                        <div class="adag-modules">
+                            <div class="adag-card glass-card">
+                                <div class="adag-status on"></div>
+                                <h4 data-i18n="dash.adag.bio">Biological Signal Injector</h4>
+                                <p data-i18n="dash.adag.bio.desc">Fake rPPG + blink pattern injection</p>
+                            </div>
+                            <div class="adag-card glass-card">
+                                <div class="adag-status on"></div>
+                                <h4 data-i18n="dash.adag.gan">GAN Fingerprint Disruptor</h4>
+                                <p data-i18n="dash.adag.gan.desc">FFT masking + camera ISP simulation</p>
+                            </div>
+                            <div class="adag-card glass-card">
+                                <div class="adag-status on"></div>
+                                <h4 data-i18n="dash.adag.temporal">Temporal Manipulator</h4>
+                                <p data-i18n="dash.adag.temporal.desc">Micro-motion + motion blur injection</p>
+                            </div>
+                            <div class="adag-card glass-card">
+                                <div class="adag-status off"></div>
+                                <h4 data-i18n="dash.adag.text">Text Humanizer</h4>
+                                <p data-i18n="dash.adag.text.desc">Statistical noise + typo injection</p>
+                            </div>
+                        </div>
+                        <div class="adag-results glass-card">
+                            <div class="adag-metric">
+                                <span class="adag-metric-val">47</span>
+                                <span class="adag-metric-label" data-i18n="dash.adag.totaltests">Total Tests</span>
+                            </div>
+                            <div class="adag-metric">
+                                <span class="adag-metric-val adag-warn">23.4%</span>
+                                <span class="adag-metric-label" data-i18n="dash.adag.evasion">Evasion Rate</span>
+                            </div>
+                            <div class="adag-metric">
+                                <span class="adag-metric-val">Visual</span>
+                                <span class="adag-metric-label" data-i18n="dash.adag.vulnerable">Most Vulnerable</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admin Page -->
+                    <div class="workspace-page" id="page-admin">
+                        <div class="workspace-header"><h3 data-i18n="dash.admin.title">User Management</h3></div>
+                        <div class="settings-content glass-card">
+                            <div class="table-header"><span data-i18n="dash.admin.name">Name</span><span data-i18n="dash.admin.email">Email</span><span data-i18n="dash.admin.role">Role</span></div>
+                            <div class="table-row"><span>Brian Lee</span><span>brian@a3sec.com</span><span class="role-admin">ADMIN</span></div>
+                            <div class="table-row"><span>Analyst Kim</span><span>kim@a3sec.com</span><span class="role-analyst">ANALYST</span></div>
+                            <div class="table-row"><span>Viewer Park</span><span>park@a3sec.com</span><span class="role-viewer">VIEWER</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Organizations Page -->
+                    <div class="workspace-page" id="page-organizations">
+                        <div class="workspace-header"><h3 data-i18n="dash.orgs.title">Organizations</h3></div>
+                        <div class="settings-content glass-card">
+                            <div class="setting-row"><span>A3 Security</span><span class="setting-val">ENTERPRISE</span></div>
+                            <div class="setting-row"><span data-i18n="dash.orgs.quota">Monthly Quota</span><span class="setting-val">10,000</span></div>
+                            <div class="setting-row"><span data-i18n="dash.orgs.usage">Usage</span>
+                                <div class="usage-bar"><div class="usage-fill" style="width:45%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API Keys Page -->
+                    <div class="workspace-page" id="page-apikeys">
+                        <div class="workspace-header"><h3 data-i18n="dash.apikeys.title">API Keys</h3></div>
+                        <div class="settings-content glass-card">
+                            <div class="setting-row"><span data-i18n="dash.apikeys.key">API Key</span><span class="setting-val api-key-masked">tl_sk_****...****3f7a</span></div>
+                            <div class="setting-row"><span data-i18n="dash.apikeys.created">Created</span><span class="setting-val">2026-02-15</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Page -->
+                    <div class="workspace-page" id="page-settings">
+                        <div class="workspace-header"><h3 data-i18n="dash.settings.title">Settings</h3></div>
+                        <div class="settings-content glass-card">
+                            <h4 data-i18n="dash.settings.lang">Language</h4>
+                            <div class="lang-options">
+                                <span class="lang-btn active">KO</span>
+                                <span class="lang-btn">EN</span>
+                                <span class="lang-btn">JA</span>
+                                <span class="lang-btn">ZH</span>
+                            </div>
+                            <h4 style="margin-top:1rem" data-i18n="dash.settings.profile">Profile</h4>
+                            <div class="setting-row"><span data-i18n="dash.settings.name">Name</span><span class="setting-val">Brian Lee</span></div>
+                            <div class="setting-row"><span data-i18n="dash.settings.role">Role</span><span class="setting-val">ADMIN</span></div>
+                        </div>
+                    </div>
+
+                    <!-- API Docs Page -->
+                    <div class="workspace-page" id="page-api-docs">
+                        <div class="workspace-header"><h3 data-i18n="dash.apidocs.title">API Documentation</h3></div>
+                        <div class="settings-content glass-card">
+                            <h4 data-i18n="dash.apidocs.sdk">SDK Examples</h4>
+                            <div class="code-tabs">
+                                <span class="code-tab active">Python</span>
+                                <span class="code-tab">TypeScript</span>
+                                <span class="code-tab">cURL</span>
+                            </div>
+                            <div class="code-block">
+<pre>import requests
+
+resp = requests.post(
+    "http://localhost:7000/ai/detect/upload",
+    files={"file": open("video.mp4","rb")},
+    headers={"X-API-Key": "tl_sk_..."}
+)
+print(resp.json()["verdict"])</pre>
+                            </div>
+                            <h4 style="margin-top:1rem" data-i18n="dash.apidocs.endpoints">Endpoints (45)</h4>
+                            <div class="endpoint-list">
+                                <div class="endpoint"><span class="method post">POST</span> /ai/detect/upload</div>
+                                <div class="endpoint"><span class="method post">POST</span> /ai/detect/url</div>
+                                <div class="endpoint"><span class="method get">GET</span> /ai/detect/status/{id}</div>
+                                <div class="endpoint"><span class="method get">GET</span> /ai/detect/analytics</div>
+                                <div class="endpoint"><span class="method get">GET</span> /ai/usage/stats</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detection Modules Section -->
+    <section id="detection" class="detection-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="detection.title">7 Detection Modules</h2>
+                <p class="section-subtitle" data-i18n="detection.subtitle">Multimodal analysis with weighted fusion</p>
+            </div>
+
+            <div class="modules-grid">
+                <div class="module-card glass-card">
+                    <div class="module-icon">&#x1F441;&#xFE0F;</div>
+                    <h3 data-i18n="mod.visual">Visual Forensics</h3>
+                    <p data-i18n="mod.visual.desc">GAN fingerprint, compression artifacts, face manipulation</p>
+                    <div class="module-weight" data-i18n="mod.visual.weight">Weight: 25%</div>
+                    <div class="feature-tags"><span class="tag">VLM</span><span class="tag">FFT</span><span class="tag">OpenCV</span></div>
+                </div>
+                <div class="module-card glass-card">
+                    <div class="module-icon">&#x1F3B5;</div>
+                    <h3 data-i18n="mod.audio">Audio Analysis</h3>
+                    <p data-i18n="mod.audio.desc">TTS/voice cloning detection, spectrum analysis</p>
+                    <div class="module-weight" data-i18n="mod.audio.weight">Weight: 20%</div>
+                    <div class="feature-tags"><span class="tag">MFCC</span><span class="tag">ZCR</span><span class="tag">Librosa</span></div>
+                </div>
+                <div class="module-card glass-card module-highlight">
+                    <div class="module-icon">&#x1F49C;</div>
+                    <h3 data-i18n="mod.bio">Biological Signal</h3>
+                    <p data-i18n="mod.bio.desc">rPPG heart rate extraction, eye blink pattern analysis</p>
+                    <div class="module-weight highlight" data-i18n="mod.bio.weight">Weight: 30% (Highest)</div>
+                    <div class="feature-tags"><span class="tag">MediaPipe</span><span class="tag">CHROM</span><span class="tag">HeartPy</span></div>
+                </div>
+                <div class="module-card glass-card">
+                    <div class="module-icon">&#x1F444;</div>
+                    <h3 data-i18n="mod.avsync">A/V Sync</h3>
+                    <p data-i18n="mod.avsync.desc">Lip-sync verification, speaker consistency</p>
+                    <div class="module-weight" data-i18n="mod.avsync.weight">Weight: 15%</div>
+                    <div class="feature-tags"><span class="tag">Resemblyzer</span><span class="tag">MediaPipe</span></div>
+                </div>
+                <div class="module-card glass-card">
+                    <div class="module-icon">&#x1F4DD;</div>
+                    <h3 data-i18n="mod.ocr">OCR/Document</h3>
+                    <p data-i18n="mod.ocr.desc">Subtitle manipulation, document forgery, text consistency</p>
+                    <div class="module-weight" data-i18n="mod.ocr.weight">Weight: 10%</div>
+                    <div class="feature-tags"><span class="tag">PaddleOCR</span></div>
+                </div>
+                <div class="module-card glass-card">
+                    <div class="module-icon">&#x1F504;</div>
+                    <h3 data-i18n="mod.crossmodal">Cross-Modal</h3>
+                    <p data-i18n="mod.crossmodal.desc">Cross-modal anomaly detection via Whisper transcription</p>
+                    <div class="module-weight" data-i18n="mod.crossmodal.weight">Auxiliary</div>
+                    <div class="feature-tags"><span class="tag">Whisper</span></div>
+                </div>
+                <div class="module-card glass-card">
+                    <div class="module-icon">&#x1F9E0;</div>
+                    <h3 data-i18n="mod.fewshot">Few-Shot</h3>
+                    <p data-i18n="mod.fewshot.desc">Prototypical Networks for novel deepfake type learning</p>
+                    <div class="module-weight" data-i18n="mod.fewshot.weight">Auxiliary</div>
+                    <div class="feature-tags"><span class="tag">Proto-Net</span></div>
+                </div>
+            </div>
+
+            <!-- Fusion Formula -->
+            <div class="fusion-formula glass-card">
+                <h3 data-i18n="fusion.title">Dynamic Weighted Fusion</h3>
+                <div class="formula">
+                    <span class="formula-text" data-i18n="fusion.formula">final_score = (Visual &times; 0.25 + Audio &times; 0.20 + Bio &times; 0.30 + AV_Sync &times; 0.15 + OCR &times; 0.10) / &Sigma;weights</span>
+                </div>
+                <div class="verdict-thresholds">
+                    <div class="threshold real">REAL &le; 0.35</div>
+                    <div class="threshold uncertain">0.35 &lt; UNCERTAIN &lt; 0.65</div>
+                    <div class="threshold fake">FAKE &ge; 0.65</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture / Tech Stack Section -->
+    <section id="architecture" class="architecture-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="arch.title">Architecture & Tech Stack</h2>
+                <p class="section-subtitle" data-i18n="arch.subtitle">Production-ready system with 89/89 tests passing</p>
+            </div>
+
+            <div class="arch-overview glass-card">
+                <div class="arch-layer">
+                    <div class="arch-label" data-i18n="arch.frontend">Frontend</div>
+                    <div class="arch-items">
+                        <span class="arch-chip react">React / Vite</span>
+                        <span class="arch-chip">TanStack Query</span>
+                        <span class="arch-chip">Recharts</span>
+                        <span class="arch-chip">WebSocket</span>
+                    </div>
+                </div>
+                <div class="arch-connector">&#x2195;</div>
+                <div class="arch-layer">
+                    <div class="arch-label" data-i18n="arch.backend">Backend</div>
+                    <div class="arch-items">
+                        <span class="arch-chip fastapi">FastAPI</span>
+                        <span class="arch-chip">45 REST APIs</span>
+                        <span class="arch-chip">2 WebSocket</span>
+                        <span class="arch-chip">yt-dlp</span>
+                    </div>
+                </div>
+                <div class="arch-connector">&#x2195;</div>
+                <div class="arch-layer">
+                    <div class="arch-label" data-i18n="arch.aicore">AI Core</div>
+                    <div class="arch-items">
+                        <span class="arch-chip langgraph-chip">LangGraph</span>
+                        <span class="arch-chip crewai-chip">CrewAI</span>
+                        <span class="arch-chip autogen-chip">AutoGen</span>
+                        <span class="arch-chip">Ollama</span>
+                    </div>
+                </div>
+                <div class="arch-connector">&#x2195;</div>
+                <div class="arch-layer">
+                    <div class="arch-label" data-i18n="arch.mlcv">ML/CV</div>
+                    <div class="arch-items">
+                        <span class="arch-chip">MediaPipe</span>
+                        <span class="arch-chip">OpenCV</span>
+                        <span class="arch-chip">Librosa</span>
+                        <span class="arch-chip">HeartPy</span>
+                        <span class="arch-chip">PaddleOCR</span>
+                        <span class="arch-chip">Whisper</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <h3 class="tech-title" data-i18n="arch.techstack">Core Technologies</h3>
+                <div class="tech-grid">
+                    <div class="tech-item glass-card">
+                        <span class="tech-icon">&#x1F504;</span>
+                        <span class="tech-name">LangGraph</span>
+                        <span class="tech-desc" data-i18n="tech.langgraph">17-Node StateGraph</span>
+                    </div>
+                    <div class="tech-item glass-card">
+                        <span class="tech-icon">&#x1F916;</span>
+                        <span class="tech-name">CrewAI</span>
+                        <span class="tech-desc" data-i18n="tech.crewai">6-Agent Consensus</span>
+                    </div>
+                    <div class="tech-item glass-card">
+                        <span class="tech-icon">&#x1F4AC;</span>
+                        <span class="tech-name">AutoGen</span>
+                        <span class="tech-desc" data-i18n="tech.autogen">Adversarial Debate</span>
+                    </div>
+                    <div class="tech-item glass-card">
+                        <span class="tech-icon">&#x1F999;</span>
+                        <span class="tech-name">Ollama</span>
+                        <span class="tech-desc" data-i18n="tech.ollama">Local LLM/VLM</span>
+                    </div>
+                    <div class="tech-item glass-card">
+                        <span class="tech-icon">&#x269B;&#xFE0F;</span>
+                        <span class="tech-name">React / Vite</span>
+                        <span class="tech-desc" data-i18n="tech.react">Dashboard UI</span>
+                    </div>
+                    <div class="tech-item glass-card">
+                        <span class="tech-icon">&#x26A1;</span>
+                        <span class="tech-name">FastAPI</span>
+                        <span class="tech-desc" data-i18n="tech.fastapi">REST + WebSocket</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-card glass-card">
+                    <div class="stat-value" data-target="89">0</div>
+                    <div class="stat-unit">/89</div>
+                    <div class="stat-label" data-i18n="stat.tests">Tests PASS</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-value" data-target="7">0</div>
+                    <div class="stat-unit">modules</div>
+                    <div class="stat-label" data-i18n="stat.modules">Detection Modules</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-value" data-target="14">0</div>
+                    <div class="stat-unit">pages</div>
+                    <div class="stat-label" data-i18n="stat.pages">Dashboard Pages</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-value" data-target="45">0</div>
+                    <div class="stat-unit">APIs</div>
+                    <div class="stat-label" data-i18n="stat.apis">REST Endpoints</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-value" data-target="3">0</div>
+                    <div class="stat-unit">frameworks</div>
+                    <div class="stat-label" data-i18n="stat.frameworks">Agent Frameworks</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-value" data-target="100">0</div>
+                    <div class="stat-unit">%</div>
+                    <div class="stat-label" data-i18n="stat.local">Local Processing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="quickstart-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="qs.title">Quick Start</h2>
+                <p class="section-subtitle" data-i18n="qs.subtitle">Get started in minutes</p>
+            </div>
+            <div class="quickstart-grid">
+                <div class="qs-card glass-card">
+                    <div class="qs-step">1</div>
+                    <h3 data-i18n="qs.step1">Clone & Install</h3>
+                    <div class="qs-code">
+                        <code>git clone https://github.com/wdlab1958/TruthLens.git</code>
+                        <code>cd TruthLens && pip install -r requirements.txt</code>
+                    </div>
+                </div>
+                <div class="qs-card glass-card">
+                    <div class="qs-step">2</div>
+                    <h3 data-i18n="qs.step2">Ollama Models</h3>
+                    <div class="qs-code">
+                        <code>ollama pull llama3.2-vision:latest</code>
+                        <code>ollama pull llama3.2:3b</code>
+                    </div>
+                </div>
+                <div class="qs-card glass-card">
+                    <div class="qs-step">3</div>
+                    <h3 data-i18n="qs.step3">Run Dashboard</h3>
+                    <div class="qs-code">
+                        <code>cd services/ai-core && uvicorn api.server:app --port 7000</code>
+                        <code>cd services/dashboard && npm run dev</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-icon">&#x1F50D;</span>
+                        <span class="logo-text">TruthLens</span>
+                    </div>
+                    <p class="footer-tagline" data-i18n="footer.tagline">Next-Gen Multi-Agentic AI DeepFake Detection System</p>
+                    <p class="footer-org">A3 Security AITF Working Group</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading" data-i18n="footer.product">Product</h4>
+                        <a href="#features" class="footer-link" data-i18n="footer.features">Core Features</a>
+                        <a href="#agents" class="footer-link" data-i18n="footer.agents">Agentic AI</a>
+                        <a href="#dashboard" class="footer-link" data-i18n="footer.dashboard">Dashboard</a>
+                        <a href="#detection" class="footer-link" data-i18n="footer.detection">Detection</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading" data-i18n="footer.resources">Resources</h4>
+                        <span class="footer-text" data-i18n="footer.guide">Users Guide</span>
+                        <span class="footer-text" data-i18n="footer.apidoc">API Documentation</span>
+                        <span class="footer-text" data-i18n="footer.testreport">Test Report</span>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading" data-i18n="footer.technology">Technology</h4>
+                        <span class="footer-text">LangGraph v0.2.50+</span>
+                        <span class="footer-text">CrewAI v1.9.3</span>
+                        <span class="footer-text">PyAutoGen v0.2.35</span>
+                        <span class="footer-text">Ollama (Local LLM)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright" data-i18n="footer.copyright">&copy; 2024-2026 TruthLens DeepFake Detection System. MIT License.</p>
+                <p class="footer-version" data-i18n="footer.version">Version 2.8.0 &middot; Editor: Brian Lee</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Glossary Modal -->
+    <div id="glossaryModal" class="modal">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon">&#x1F4D6;</div>
+                <h2 class="modal-title" id="modalTitle">Technology</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <p>Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="glossary.js"></script>
+    <script src="animation3d.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
