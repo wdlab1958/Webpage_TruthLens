@@ -123,3 +123,158 @@
 .tag:active {
     transform: translateY(0) scale(0.95);
 }
+
+/* ========================================
+   Diff Card - Click Interaction
+   ======================================== */
+.diff-card[data-feature],
+.module-card[data-module],
+.tech-item[data-tech] {
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.diff-card[data-feature]:hover,
+.module-card[data-module]:hover,
+.tech-item[data-tech]:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(79, 145, 255, 0.25);
+    border-color: rgba(79, 145, 255, 0.5);
+}
+
+.diff-click-hint {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: var(--color-quantum-blue, #4f91ff);
+    opacity: 0.7;
+    letter-spacing: 0.03em;
+    transition: opacity 0.2s ease;
+}
+
+.diff-card[data-feature]:hover .diff-click-hint {
+    opacity: 1;
+}
+
+/* ========================================
+   Feature Modal Extended Styles
+   ======================================== */
+.feature-modal-content {
+    max-width: 780px;
+}
+
+.feature-modal-badge {
+    display: inline-block;
+    margin-top: 0.4rem;
+    padding: 0.25rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, rgba(79, 145, 255, 0.2), rgba(139, 92, 246, 0.2));
+    border: 1px solid rgba(79, 145, 255, 0.4);
+    color: #a5c8ff;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.feature-section {
+    margin: 1.8rem 0;
+    padding: 1.4rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+}
+
+.feature-section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #a5c8ff;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.feature-metric {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(79, 145, 255, 0.07);
+    border: 1px solid rgba(79, 145, 255, 0.2);
+    border-radius: 10px;
+}
+
+.feature-metric-value {
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #4f91ff, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+.feature-metric-label {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 0.3rem;
+    letter-spacing: 0.04em;
+}
+
+.feature-flow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.2rem 0;
+}
+
+.feature-flow-step {
+    padding: 0.4rem 0.9rem;
+    background: rgba(79, 145, 255, 0.12);
+    border: 1px solid rgba(79, 145, 255, 0.3);
+    border-radius: 20px;
+    font-size: 0.78rem;
+    color: #c4dcff;
+    font-weight: 600;
+}
+
+.feature-flow-arrow {
+    color: rgba(79, 145, 255, 0.6);
+    font-size: 1.1rem;
+}
+
+.feature-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.feature-tag {
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    color: #c4b5fd;
+}
+
+.feature-highlight-box {
+    padding: 1rem 1.3rem;
+    margin: 1.5rem 0;
+    background: linear-gradient(135deg, rgba(79, 145, 255, 0.1), rgba(139, 92, 246, 0.08));
+    border-left: 3px solid #4f91ff;
+    border-radius: 0 10px 10px 0;
+    font-size: 0.9rem;
+    color: #c4dcff;
+    line-height: 1.7;
+}

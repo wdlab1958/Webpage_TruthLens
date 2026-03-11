@@ -114,41 +114,47 @@
             </div>
 
             <div class="differentiators-grid">
-                <div class="diff-card glass-card">
+                <div class="diff-card glass-card" data-feature="bio">
                     <div class="diff-icon">&#x1F49C;</div>
                     <h3 class="diff-title" data-i18n="feat.bio.title">Biological Signal Verification</h3>
                     <p class="diff-desc" data-i18n="feat.bio.desc">rPPG heart rate extraction and eye blink pattern analysis detect physiologically impossible patterns - the strongest evidence against deepfakes.</p>
                     <div class="diff-highlight" data-i18n="feat.bio.highlight">Most reliable evidence</div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
-                <div class="diff-card glass-card">
+                <div class="diff-card glass-card" data-feature="triple">
                     <div class="diff-icon">&#x1F916;</div>
                     <h3 class="diff-title" data-i18n="feat.triple.title">Triple Agentic AI</h3>
                     <p class="diff-desc" data-i18n="feat.triple.desc">LangGraph orchestration + CrewAI 6-expert consensus + AutoGen adversarial debate - three frameworks working in concert.</p>
                     <div class="diff-highlight" data-i18n="feat.triple.highlight">3 AI Frameworks</div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
-                <div class="diff-card glass-card">
+                <div class="diff-card glass-card" data-feature="privacy">
                     <div class="diff-icon">&#x1F512;</div>
                     <h3 class="diff-title" data-i18n="feat.privacy.title">Privacy Guaranteed</h3>
                     <p class="diff-desc" data-i18n="feat.privacy.desc">Ollama-based local LLM/VLM inference ensures zero data transmission to external servers. Safe for sensitive data.</p>
                     <div class="diff-highlight" data-i18n="feat.privacy.highlight">100% Local Processing</div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
-                <div class="diff-card glass-card">
+                <div class="diff-card glass-card" data-feature="xai">
                     <div class="diff-icon">&#x1F4A1;</div>
                     <h3 class="diff-title" data-i18n="feat.xai.title">Explainable AI (XAI)</h3>
                     <p class="diff-desc" data-i18n="feat.xai.desc">Every verdict includes LLM-generated detailed explanation and evidence chain for full transparency.</p>
                     <div class="diff-highlight" data-i18n="feat.xai.highlight">Evidence Chain</div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
-                <div class="diff-card glass-card">
+                <div class="diff-card glass-card" data-feature="adag">
                     <div class="diff-icon">&#x1F6E1;&#xFE0F;</div>
                     <h3 class="diff-title" data-i18n="feat.adag.title">ADAG Red Team</h3>
                     <p class="diff-desc" data-i18n="feat.adag.desc">Adversarial testing framework with 4 attack modules automatically verifies detection robustness via Red-Blue Team feedback loop.</p>
                     <div class="diff-highlight" data-i18n="feat.adag.highlight">4 Attack Modules</div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
-                <div class="diff-card glass-card">
+                <div class="diff-card glass-card" data-feature="realtime">
                     <div class="diff-icon">&#x26A1;</div>
                     <h3 class="diff-title" data-i18n="feat.realtime.title">Real-time Processing</h3>
                     <p class="diff-desc" data-i18n="feat.realtime.desc">Send() parallel dispatch, async architecture, MemorySaver checkpoint for fault-tolerant real-time analysis.</p>
                     <div class="diff-highlight" data-i18n="feat.realtime.highlight">60% faster</div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
             </div>
         </div>
@@ -702,54 +708,61 @@ print(resp.json()["verdict"])</pre>
             </div>
 
             <div class="modules-grid">
-                <div class="module-card glass-card">
+                <div class="module-card glass-card" data-module="visual">
                     <div class="module-icon">&#x1F441;&#xFE0F;</div>
                     <h3 data-i18n="mod.visual">Visual Forensics</h3>
                     <p data-i18n="mod.visual.desc">GAN fingerprint, compression artifacts, face manipulation</p>
                     <div class="module-weight" data-i18n="mod.visual.weight">Weight: 25%</div>
                     <div class="feature-tags"><span class="tag">VLM</span><span class="tag">FFT</span><span class="tag">OpenCV</span></div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
-                <div class="module-card glass-card">
+                <div class="module-card glass-card" data-module="audio">
                     <div class="module-icon">&#x1F3B5;</div>
                     <h3 data-i18n="mod.audio">Audio Analysis</h3>
                     <p data-i18n="mod.audio.desc">TTS/voice cloning detection, spectrum analysis</p>
                     <div class="module-weight" data-i18n="mod.audio.weight">Weight: 20%</div>
                     <div class="feature-tags"><span class="tag">MFCC</span><span class="tag">ZCR</span><span class="tag">Librosa</span></div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
-                <div class="module-card glass-card module-highlight">
+                <div class="module-card glass-card module-highlight" data-module="bio">
                     <div class="module-icon">&#x1F49C;</div>
                     <h3 data-i18n="mod.bio">Biological Signal</h3>
                     <p data-i18n="mod.bio.desc">rPPG heart rate extraction, eye blink pattern analysis</p>
                     <div class="module-weight highlight" data-i18n="mod.bio.weight">Weight: 30% (Highest)</div>
                     <div class="feature-tags"><span class="tag">MediaPipe</span><span class="tag">CHROM</span><span class="tag">HeartPy</span></div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
-                <div class="module-card glass-card">
+                <div class="module-card glass-card" data-module="avsync">
                     <div class="module-icon">&#x1F444;</div>
                     <h3 data-i18n="mod.avsync">A/V Sync</h3>
                     <p data-i18n="mod.avsync.desc">Lip-sync verification, speaker consistency</p>
                     <div class="module-weight" data-i18n="mod.avsync.weight">Weight: 15%</div>
                     <div class="feature-tags"><span class="tag">Resemblyzer</span><span class="tag">MediaPipe</span></div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
-                <div class="module-card glass-card">
+                <div class="module-card glass-card" data-module="ocr">
                     <div class="module-icon">&#x1F4DD;</div>
                     <h3 data-i18n="mod.ocr">OCR/Document</h3>
                     <p data-i18n="mod.ocr.desc">Subtitle manipulation, document forgery, text consistency</p>
                     <div class="module-weight" data-i18n="mod.ocr.weight">Weight: 10%</div>
                     <div class="feature-tags"><span class="tag">PaddleOCR</span></div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
-                <div class="module-card glass-card">
+                <div class="module-card glass-card" data-module="crossmodal">
                     <div class="module-icon">&#x1F504;</div>
                     <h3 data-i18n="mod.crossmodal">Cross-Modal</h3>
                     <p data-i18n="mod.crossmodal.desc">Cross-modal anomaly detection via Whisper transcription</p>
                     <div class="module-weight" data-i18n="mod.crossmodal.weight">Auxiliary</div>
                     <div class="feature-tags"><span class="tag">Whisper</span></div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
-                <div class="module-card glass-card">
+                <div class="module-card glass-card" data-module="fewshot">
                     <div class="module-icon">&#x1F9E0;</div>
                     <h3 data-i18n="mod.fewshot">Few-Shot</h3>
                     <p data-i18n="mod.fewshot.desc">Prototypical Networks for novel deepfake type learning</p>
                     <div class="module-weight" data-i18n="mod.fewshot.weight">Auxiliary</div>
                     <div class="feature-tags"><span class="tag">Proto-Net</span></div>
+                    <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                 </div>
             </div>
 
@@ -823,35 +836,41 @@ print(resp.json()["verdict"])</pre>
             <div class="tech-stack">
                 <h3 class="tech-title" data-i18n="arch.techstack">Core Technologies</h3>
                 <div class="tech-grid">
-                    <div class="tech-item glass-card">
+                    <div class="tech-item glass-card" data-tech="langgraph">
                         <span class="tech-icon">&#x1F504;</span>
                         <span class="tech-name">LangGraph</span>
                         <span class="tech-desc" data-i18n="tech.langgraph">17-Node StateGraph</span>
+                        <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                     </div>
-                    <div class="tech-item glass-card">
+                    <div class="tech-item glass-card" data-tech="crewai">
                         <span class="tech-icon">&#x1F916;</span>
                         <span class="tech-name">CrewAI</span>
                         <span class="tech-desc" data-i18n="tech.crewai">6-Agent Consensus</span>
+                        <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                     </div>
-                    <div class="tech-item glass-card">
+                    <div class="tech-item glass-card" data-tech="autogen">
                         <span class="tech-icon">&#x1F4AC;</span>
                         <span class="tech-name">AutoGen</span>
                         <span class="tech-desc" data-i18n="tech.autogen">Adversarial Debate</span>
+                        <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                     </div>
-                    <div class="tech-item glass-card">
+                    <div class="tech-item glass-card" data-tech="ollama">
                         <span class="tech-icon">&#x1F999;</span>
                         <span class="tech-name">Ollama</span>
                         <span class="tech-desc" data-i18n="tech.ollama">Local LLM/VLM</span>
+                        <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                     </div>
-                    <div class="tech-item glass-card">
+                    <div class="tech-item glass-card" data-tech="react">
                         <span class="tech-icon">&#x269B;&#xFE0F;</span>
                         <span class="tech-name">React / Vite</span>
                         <span class="tech-desc" data-i18n="tech.react">Dashboard UI</span>
+                        <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                     </div>
-                    <div class="tech-item glass-card">
+                    <div class="tech-item glass-card" data-tech="fastapi">
                         <span class="tech-icon">&#x26A1;</span>
                         <span class="tech-name">FastAPI</span>
                         <span class="tech-desc" data-i18n="tech.fastapi">REST + WebSocket</span>
+                        <div class="diff-click-hint">&#x1F4CB; 자세히 보기</div>
                     </div>
                 </div>
             </div>
@@ -975,6 +994,57 @@ print(resp.json()["verdict"])</pre>
     </footer>
 
     <!-- Glossary Modal -->
+    <!-- Tech Detail Modal -->
+    <div id="techModal" class="modal">
+        <div class="modal-content glass-card feature-modal-content">
+            <button class="modal-close" id="techModalClose">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon" id="techModalIcon">&#x1F4BB;</div>
+                <div>
+                    <h2 class="modal-title" id="techModalTitle">Technology</h2>
+                    <div class="feature-modal-badge" id="techModalBadge"></div>
+                </div>
+            </div>
+            <div class="modal-body" id="techModalBody">
+                <p>Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Module Detail Modal -->
+    <div id="moduleModal" class="modal">
+        <div class="modal-content glass-card feature-modal-content">
+            <button class="modal-close" id="moduleModalClose">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon" id="moduleModalIcon">&#x1F4CB;</div>
+                <div>
+                    <h2 class="modal-title" id="moduleModalTitle">Module</h2>
+                    <div class="feature-modal-badge" id="moduleModalBadge"></div>
+                </div>
+            </div>
+            <div class="modal-body" id="moduleModalBody">
+                <p>Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature Detail Modal -->
+    <div id="featureModal" class="modal">
+        <div class="modal-content glass-card feature-modal-content">
+            <button class="modal-close" id="featureModalClose">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon" id="featureModalIcon">&#x1F4CB;</div>
+                <div>
+                    <h2 class="modal-title" id="featureModalTitle">Feature</h2>
+                    <div class="feature-modal-badge" id="featureModalBadge"></div>
+                </div>
+            </div>
+            <div class="modal-body" id="featureModalBody">
+                <p>Loading...</p>
+            </div>
+        </div>
+    </div>
+
     <div id="glossaryModal" class="modal">
         <div class="modal-content glass-card">
             <button class="modal-close" id="modalClose">&times;</button>
