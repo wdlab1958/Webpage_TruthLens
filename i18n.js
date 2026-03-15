@@ -18,17 +18,17 @@ const i18nData = {
         'hero.title1': 'TruthLens',
         'hero.title2': 'DeepFake Detection',
         'hero.subtitle': '3중 멀티 에이전틱 AI 프레임워크',
-        'hero.subtitle2': 'React 대시보드 \u00B7 실시간 BI \u00B7 ADAG Red Team',
+        'hero.subtitle2': 'React 대시보드 \u00B7 MC Fusion Simulation \u00B7 ADAG Red Team',
         'hero.btn.dashboard': '대시보드 미리보기',
         'hero.btn.agents': '에이전틱 AI',
-        'hero.trust.tests': '89/89 테스트 PASS',
+        'hero.trust.tests': '67/67 테스트 PASS',
         'hero.trust.modules': '7개 탐지 모듈',
-        'hero.trust.pages': '14개 대시보드 페이지',
-        'hero.trust.apis': '45개 REST API',
+        'hero.trust.pages': '15개 대시보드 페이지',
+        'hero.trust.apis': '47개 REST API',
 
         // Features Section
         'features.title': '핵심 차별화 요소',
-        'features.subtitle': 'TruthLens v2.8.0 — 6대 핵심 강점',
+        'features.subtitle': 'TruthLens v2.9.0 — 6대 핵심 강점',
 
         'feat.bio.title': '생체신호 기반 검증',
         'feat.bio.desc': 'rPPG 심박 추출과 눈 깜빡임 패턴 분석으로 생리학적으로 불가능한 패턴을 탐지합니다 — 딥페이크에 대한 가장 강력한 증거입니다.',
@@ -92,7 +92,7 @@ const i18nData = {
 
         // Dashboard Section
         'dash.title': 'React 대시보드',
-        'dash.subtitle': '14개 페이지 \u00B7 실시간 BI \u00B7 WebSocket \u00B7 45개 REST API',
+        'dash.subtitle': '15개 페이지 \u00B7 실시간 BI \u00B7 WebSocket \u00B7 47개 REST API',
 
         'dash.sidebar.detection': '탐지',
         'dash.sidebar.analyze': '분석',
@@ -107,6 +107,7 @@ const i18nData = {
         'dash.sidebar.autogen': 'AutoGen 토론',
         'dash.sidebar.llm': 'LLM / Ollama',
         'dash.sidebar.adag': 'ADAG Red Team',
+        'dash.sidebar.mcfusion': 'MC Fusion Sim',
         'dash.sidebar.system': '시스템',
         'dash.sidebar.settings': '설정',
         'dash.sidebar.apidocs': 'API 문서',
@@ -191,6 +192,15 @@ const i18nData = {
         'dash.adag.evasion': '우회율',
         'dash.adag.vulnerable': '최취약 모듈',
 
+        // MC Fusion Simulation
+        'dash.mcfusion.title': 'MC Fusion Simulation',
+        'dash.mcfusion.methods': '최적화 방법',
+        'dash.mcfusion.decision': 'Decision Engine',
+        'dash.mcfusion.strategy': '전략',
+        'dash.mcfusion.convergence': '수렴도',
+        'dash.mcfusion.reliability': '신뢰도 점수',
+        'dash.mcfusion.weights': '최적화 가중치',
+
         // Admin
         'dash.admin.title': '사용자 관리',
         'dash.admin.name': '이름',
@@ -217,7 +227,7 @@ const i18nData = {
         // API Docs
         'dash.apidocs.title': 'API 문서',
         'dash.apidocs.sdk': 'SDK 코드 예제',
-        'dash.apidocs.endpoints': '엔드포인트 (45개)',
+        'dash.apidocs.endpoints': '엔드포인트 (47개)',
 
         // Detection Modules Section
         'detection.title': '7개 탐지 모듈',
@@ -256,7 +266,7 @@ const i18nData = {
 
         // Architecture Section
         'arch.title': '아키텍처 & 기술 스택',
-        'arch.subtitle': '89/89 테스트 통과 — 프로덕션 레디 시스템',
+        'arch.subtitle': '67/67 테스트 통과 — 프로덕션 레디 시스템',
         'arch.frontend': '프론트엔드',
         'arch.backend': '백엔드',
         'arch.aicore': 'AI 코어',
@@ -297,8 +307,8 @@ const i18nData = {
         'footer.apidoc': 'API 문서',
         'footer.testreport': '테스트 리포트',
         'footer.technology': '기술',
-        'footer.copyright': '\u00A9 2024-2026 TruthLens DeepFake Detection System. MIT License.',
-        'footer.version': 'Version 2.8.0 \u00B7 Editor: Brian Lee',
+        'footer.copyright': '\u00A9 2024-2026 TruthLens DeepFake Detection System. WDLAB License.',
+        'footer.version': 'Version 2.9.0 \u00B7 Editor: Brian Lee',
     },
 
     en: {
@@ -316,17 +326,17 @@ const i18nData = {
         'hero.title1': 'TruthLens',
         'hero.title2': 'DeepFake Detection',
         'hero.subtitle': '3-Triple Multi-Agentic AI Framework',
-        'hero.subtitle2': 'React Dashboard \u00B7 Real-time BI \u00B7 ADAG Red Team',
+        'hero.subtitle2': 'React Dashboard \u00B7 MC Fusion Simulation \u00B7 ADAG Red Team',
         'hero.btn.dashboard': 'Dashboard Preview',
         'hero.btn.agents': 'Agentic AI',
-        'hero.trust.tests': '89/89 Tests PASS',
+        'hero.trust.tests': '67/67 Tests PASS',
         'hero.trust.modules': '7 Detection Modules',
-        'hero.trust.pages': '14 Dashboard Pages',
-        'hero.trust.apis': '45 REST APIs',
+        'hero.trust.pages': '15 Dashboard Pages',
+        'hero.trust.apis': '47 REST APIs',
 
         // Features Section
         'features.title': 'Core Differentiators',
-        'features.subtitle': 'TruthLens v2.8.0 \u2014 6 Core Strengths',
+        'features.subtitle': 'TruthLens v2.9.0 \u2014 6 Core Strengths',
 
         'feat.bio.title': 'Biological Signal Verification',
         'feat.bio.desc': 'rPPG heart rate extraction and eye blink pattern analysis detect physiologically impossible patterns \u2014 the strongest evidence against deepfakes.',
@@ -390,7 +400,7 @@ const i18nData = {
 
         // Dashboard Section
         'dash.title': 'React Dashboard',
-        'dash.subtitle': '14 pages \u00B7 Real-time BI \u00B7 WebSocket \u00B7 45 REST APIs',
+        'dash.subtitle': '15 pages \u00B7 Real-time BI \u00B7 WebSocket \u00B7 47 REST APIs',
 
         'dash.sidebar.detection': 'Detection',
         'dash.sidebar.analyze': 'Analyze',
@@ -405,6 +415,7 @@ const i18nData = {
         'dash.sidebar.autogen': 'AutoGen Debate',
         'dash.sidebar.llm': 'LLM / Ollama',
         'dash.sidebar.adag': 'ADAG Red Team',
+        'dash.sidebar.mcfusion': 'MC Fusion Sim',
         'dash.sidebar.system': 'System',
         'dash.sidebar.settings': 'Settings',
         'dash.sidebar.apidocs': 'API Docs',
@@ -489,6 +500,15 @@ const i18nData = {
         'dash.adag.evasion': 'Evasion Rate',
         'dash.adag.vulnerable': 'Most Vulnerable',
 
+        // MC Fusion Simulation
+        'dash.mcfusion.title': 'MC Fusion Simulation',
+        'dash.mcfusion.methods': 'Optimization Methods',
+        'dash.mcfusion.decision': 'Decision Engine',
+        'dash.mcfusion.strategy': 'Strategy',
+        'dash.mcfusion.convergence': 'Convergence',
+        'dash.mcfusion.reliability': 'Reliability Score',
+        'dash.mcfusion.weights': 'Optimized Weights',
+
         // Admin
         'dash.admin.title': 'User Management',
         'dash.admin.name': 'Name',
@@ -515,7 +535,7 @@ const i18nData = {
         // API Docs
         'dash.apidocs.title': 'API Documentation',
         'dash.apidocs.sdk': 'SDK Examples',
-        'dash.apidocs.endpoints': 'Endpoints (45)',
+        'dash.apidocs.endpoints': 'Endpoints (47)',
 
         // Detection Modules Section
         'detection.title': '7 Detection Modules',
@@ -554,7 +574,7 @@ const i18nData = {
 
         // Architecture Section
         'arch.title': 'Architecture & Tech Stack',
-        'arch.subtitle': '89/89 tests passing \u2014 production-ready system',
+        'arch.subtitle': '67/67 tests passing \u2014 production-ready system',
         'arch.frontend': 'Frontend',
         'arch.backend': 'Backend',
         'arch.aicore': 'AI Core',
@@ -595,8 +615,8 @@ const i18nData = {
         'footer.apidoc': 'API Documentation',
         'footer.testreport': 'Test Report',
         'footer.technology': 'Technology',
-        'footer.copyright': '\u00A9 2024-2026 TruthLens DeepFake Detection System. MIT License.',
-        'footer.version': 'Version 2.8.0 \u00B7 Editor: Brian Lee',
+        'footer.copyright': '\u00A9 2024-2026 TruthLens DeepFake Detection System. WDLAB License.',
+        'footer.version': 'Version 2.9.0 \u00B7 Editor: Brian Lee',
     }
 };
 

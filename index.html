@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="TruthLens v2.8.0 - 차세대 멀티모달 에이전틱 AI 기반 딥페이크 탐지 시스템. LangGraph, CrewAI, AutoGen, Ollama를 활용한 고정밀 딥페이크 검출.">
-    <title>TruthLens DeepFake Detection System v2.8.0</title>
+        content="TruthLens v2.9.0 - 차세대 멀티모달 에이전틱 AI 기반 딥페이크 탐지 시스템. LangGraph, CrewAI, AutoGen, Ollama를 활용한 고정밀 딥페이크 검출. MC Fusion Simulation + PDF 보고서 강화.">
+    <title>TruthLens DeepFake Detection System v2.9.0</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="modal.css">
@@ -24,7 +24,7 @@
             <div class="nav-logo">
                 <span class="logo-icon">&#x1F50D;</span>
                 <span class="logo-text">TruthLens</span>
-                <span class="nav-version">v2.8.0</span>
+                <span class="nav-version">v2.9.0</span>
             </div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
@@ -65,7 +65,7 @@
             </h1>
             <p class="hero-subtitle">
                 <span data-i18n="hero.subtitle">3-Triple Multi-Agentic AI Framework</span><br>
-                <span data-i18n="hero.subtitle2">React Dashboard &middot; Real-time BI &middot; ADAG Red Team</span>
+                <span data-i18n="hero.subtitle2">React Dashboard &middot; MC Fusion Simulation &middot; ADAG Red Team</span>
             </p>
             <div class="hero-cta">
                 <a href="#dashboard" class="btn-glow">
@@ -82,7 +82,7 @@
             <div class="hero-trust-badges">
                 <div class="trust-badge">
                     <span class="trust-icon">&#x2713;</span>
-                    <span data-i18n="hero.trust.tests">89/89 Tests PASS</span>
+                    <span data-i18n="hero.trust.tests">67/67 Tests PASS</span>
                 </div>
                 <div class="trust-badge">
                     <span class="trust-icon">&#x2713;</span>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="trust-badge">
                     <span class="trust-icon">&#x2713;</span>
-                    <span data-i18n="hero.trust.pages">14 Dashboard Pages</span>
+                    <span data-i18n="hero.trust.pages">15 Dashboard Pages</span>
                 </div>
                 <div class="trust-badge">
                     <span class="trust-icon">&#x2713;</span>
@@ -110,7 +110,7 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title" data-i18n="features.title">Core Differentiators</h2>
-                <p class="section-subtitle" data-i18n="features.subtitle">TruthLens v2.8.0 - 6 Core Strengths</p>
+                <p class="section-subtitle" data-i18n="features.subtitle">TruthLens v2.9.0 - 6 Core Strengths</p>
             </div>
 
             <div class="differentiators-grid">
@@ -328,7 +328,7 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title" data-i18n="dash.title">React Dashboard</h2>
-                <p class="section-subtitle" data-i18n="dash.subtitle">14 pages &middot; Real-time BI &middot; WebSocket &middot; 45 REST APIs</p>
+                <p class="section-subtitle" data-i18n="dash.subtitle">15 pages &middot; Real-time BI &middot; WebSocket &middot; 47 REST APIs</p>
             </div>
 
             <div class="dashboard-preview">
@@ -374,6 +374,9 @@
                         </div>
                         <div class="sidebar-item" data-page="adag">
                             <span class="sidebar-icon">&#x1F6E1;&#xFE0F;</span> <span data-i18n="dash.sidebar.adag">ADAG Red Team</span>
+                        </div>
+                        <div class="sidebar-item" data-page="mc-simulation">
+                            <span class="sidebar-icon">&#x1F3AF;</span> <span data-i18n="dash.sidebar.mcfusion">MC Fusion Sim</span>
                         </div>
                     </div>
                     <div class="sidebar-section">
@@ -664,6 +667,26 @@
                         </div>
                     </div>
 
+                    <!-- MC Fusion Simulation Page -->
+                    <div class="workspace-page" id="page-mc-simulation">
+                        <div class="workspace-header"><h3 data-i18n="dash.mcfusion.title">MC Fusion Simulation</h3></div>
+                        <div class="settings-content glass-card">
+                            <h4 data-i18n="dash.mcfusion.methods">Optimization Methods</h4>
+                            <div class="setting-row"><span>Grid Search</span><div class="toggle on"></div></div>
+                            <div class="setting-row"><span>Bayesian (Optuna TPE)</span><div class="toggle on"></div></div>
+                            <div class="setting-row"><span>Differential Evolution</span><div class="toggle on"></div></div>
+                            <div class="setting-row"><span>Monte Carlo</span><div class="toggle on"></div></div>
+                            <h4 style="margin-top:1rem" data-i18n="dash.mcfusion.decision">Decision Engine</h4>
+                            <div class="setting-row"><span data-i18n="dash.mcfusion.strategy">Strategy</span><span class="setting-val">CONSENSUS_MEAN</span></div>
+                            <div class="setting-row"><span data-i18n="dash.mcfusion.convergence">Convergence</span><span class="status-connected">HIGH</span></div>
+                            <div class="setting-row"><span data-i18n="dash.mcfusion.reliability">Reliability Score</span><span class="setting-val">A (87/100)</span></div>
+                            <h4 style="margin-top:1rem" data-i18n="dash.mcfusion.weights">Optimized Weights</h4>
+                            <div class="setting-row"><span>Visual</span><span class="setting-val">0.25 &rarr; 0.27 (+8%)</span></div>
+                            <div class="setting-row"><span>Audio</span><span class="setting-val">0.20 &rarr; 0.18 (-10%)</span></div>
+                            <div class="setting-row"><span>Biological</span><span class="setting-val">0.30 &rarr; 0.32 (+7%)</span></div>
+                        </div>
+                    </div>
+
                     <!-- API Docs Page -->
                     <div class="workspace-page" id="page-api-docs">
                         <div class="workspace-header"><h3 data-i18n="dash.apidocs.title">API Documentation</h3></div>
@@ -786,7 +809,7 @@ print(resp.json()["verdict"])</pre>
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title" data-i18n="arch.title">Architecture & Tech Stack</h2>
-                <p class="section-subtitle" data-i18n="arch.subtitle">Production-ready system with 89/89 tests passing</p>
+                <p class="section-subtitle" data-i18n="arch.subtitle">Production-ready system with 67/67 tests passing</p>
             </div>
 
             <div class="arch-overview glass-card">
@@ -804,7 +827,7 @@ print(resp.json()["verdict"])</pre>
                     <div class="arch-label" data-i18n="arch.backend">Backend</div>
                     <div class="arch-items">
                         <span class="arch-chip fastapi">FastAPI</span>
-                        <span class="arch-chip">45 REST APIs</span>
+                        <span class="arch-chip">47 REST APIs</span>
                         <span class="arch-chip">2 WebSocket</span>
                         <span class="arch-chip">yt-dlp</span>
                     </div>
@@ -882,8 +905,8 @@ print(resp.json()["verdict"])</pre>
         <div class="section-container">
             <div class="stats-grid">
                 <div class="stat-card glass-card">
-                    <div class="stat-value" data-target="89">0</div>
-                    <div class="stat-unit">/89</div>
+                    <div class="stat-value" data-target="67">0</div>
+                    <div class="stat-unit">/67</div>
                     <div class="stat-label" data-i18n="stat.tests">Tests PASS</div>
                 </div>
                 <div class="stat-card glass-card">
@@ -892,12 +915,12 @@ print(resp.json()["verdict"])</pre>
                     <div class="stat-label" data-i18n="stat.modules">Detection Modules</div>
                 </div>
                 <div class="stat-card glass-card">
-                    <div class="stat-value" data-target="14">0</div>
+                    <div class="stat-value" data-target="15">0</div>
                     <div class="stat-unit">pages</div>
                     <div class="stat-label" data-i18n="stat.pages">Dashboard Pages</div>
                 </div>
                 <div class="stat-card glass-card">
-                    <div class="stat-value" data-target="45">0</div>
+                    <div class="stat-value" data-target="47">0</div>
                     <div class="stat-unit">APIs</div>
                     <div class="stat-label" data-i18n="stat.apis">REST Endpoints</div>
                 </div>
@@ -987,8 +1010,8 @@ print(resp.json()["verdict"])</pre>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright" data-i18n="footer.copyright">&copy; 2024-2026 TruthLens DeepFake Detection System. MIT License.</p>
-                <p class="footer-version" data-i18n="footer.version">Version 2.8.0 &middot; Editor: Brian Lee</p>
+                <p class="footer-copyright" data-i18n="footer.copyright">&copy; 2024-2026 TruthLens DeepFake Detection System. WDLAB License.</p>
+                <p class="footer-version" data-i18n="footer.version">Version 2.9.0 &middot; Editor: Brian Lee</p>
             </div>
         </div>
     </footer>
