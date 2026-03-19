@@ -245,25 +245,25 @@ document.querySelectorAll('.tag').forEach(tag => {
 const techModalData = {
     langgraph: {
         icon: '🔄',
-        title: 'LangGraph — 워크플로우 오케스트레이션',
-        badge: '도입 이유 · 실제 작동 방식',
+        title: 'LangGraph — 38-노드 파이프라인 오케스트레이션',
+        badge: 'v4.0 · 8 Phase · 적응형 라우터',
         content: `
             <div class="feature-highlight-box">
-                <strong>왜 LangGraph인가?</strong> 딥페이크 탐지는 단순 LLM 호출이 아닌, 생체신호·시각·오디오·OCR 등 이질적인 분석 노드들이 조건 분기와 병렬 실행을 하며 협력해야 합니다. LangGraph의 StateGraph는 이 복잡한 흐름을 코드로 명확히 표현하고 제어할 수 있는 유일한 프레임워크입니다.
+                <strong>왜 LangGraph인가?</strong> 38개 탐지 모듈이 8개 Phase에 걸쳐 조건 분기와 병렬 실행을 하며 협력해야 합니다. LangGraph의 StateGraph는 공간/DM/시간/생체/오디오/멀티모달/방어/XAI 등 이질적인 분석 노드들의 복잡한 흐름을 그래프로 직관적 표현하고 적응형 라우터(Rapid/Standard/Precise/Forensic)로 최적 경로를 자동 선택합니다.
             </div>
 
             <div class="feature-metrics">
                 <div class="feature-metric">
-                    <div class="feature-metric-value">17</div>
+                    <div class="feature-metric-value">38</div>
                     <div class="feature-metric-label">StateGraph 노드</div>
                 </div>
                 <div class="feature-metric">
-                    <div class="feature-metric-value">5개</div>
-                    <div class="feature-metric-label">Send() 병렬 노드</div>
+                    <div class="feature-metric-value">8</div>
+                    <div class="feature-metric-label">Detection Phases</div>
                 </div>
                 <div class="feature-metric">
-                    <div class="feature-metric-value">60%</div>
-                    <div class="feature-metric-label">처리 속도 향상</div>
+                    <div class="feature-metric-value">4</div>
+                    <div class="feature-metric-label">분석 모드</div>
                 </div>
             </div>
 
@@ -717,10 +717,10 @@ document.addEventListener('keydown', (e) => {
 // Module Detail Modal (7 Detection Modules)
 // ========================================
 const moduleModalData = {
-    visual: {
+    spatial: {
         icon: '👁️',
-        title: '시각 포렌식 (Visual Forensics)',
-        badge: 'Weight: 25% · VLM · FFT · OpenCV',
+        title: '공간 분석 (Spatial Analysis)',
+        badge: 'Phase 1 · 7 modules · CNN+ViT+Foundation',
         content: `
             <div class="feature-highlight-box">
                 <strong>GAN 지문, 압축 아티팩트, 얼굴 조작 흔적</strong>을 다층 분석합니다. VLM(Vision Language Model)이 픽셀 수준의 이상 징후를 자연어로 설명하며, FFT로 주파수 도메인 위변조 패턴을 검출합니다.
@@ -1186,7 +1186,15 @@ const moduleModalData = {
                 <p>MAML(Model-Agnostic Meta-Learning)과 결합하여 새로운 딥페이크 유형에 대해 5~10번의 그래디언트 업데이트만으로 적응합니다. ADAG 레드팀이 새 공격을 발견하면 자동으로 퓨샷 학습 파이프라인에 투입됩니다.</p>
             </div>
         `
-    }
+    },
+    // v4.0 new module keys (compact entries for new detection phase categories)
+    dm: { icon: '🎨', title: 'DM 탐지 (Diffusion Model Detection)', badge: 'Phase 2 · 5 modules · DIRE/SeDID/DiffFake', content: `<div class="feature-highlight-box"><strong>Diffusion Model 전용 탐지 엔진.</strong> DIRE/DistilDIRE 재구성 오류 분석, SeDID 단계별 디노이징 오류, DiffusionFake 역생성 추적으로 Stable Diffusion, DALL-E 3, Midjourney, Sora 등 15종+ DM 기반 도구를 96%+ 탐지합니다.</div><div class="feature-section"><div class="feature-section-title">🔬 핵심 모듈</div><ul><li><strong>DIRE</strong> — 사전학습 DM으로 재구성 후 원본 대비 오류 패턴 분석</li><li><strong>DistilDIRE</strong> — 지식 증류 기반 3.2배 속도 향상 경량 버전</li><li><strong>SeDID</strong> — 각 타임스텝별 통계적 오류 분포 분석</li><li><strong>DiffusionFake</strong> — 역생성 과정 추적으로 ID 혼합도 판별</li><li><strong>소스 분류</strong> — Real→Synthetic→GAN/DM→구체 모델명 3단계 추정</li></ul></div>` },
+    temporal: { icon: '⏱️', title: '시간/생체 분석 (Temporal & Biological)', badge: 'Phase 3 · 8 modules · VideoMAE/rPPG v2/FACS', content: `<div class="feature-highlight-box"><strong>비디오 시간축 + 생체 신호 분석.</strong> VideoMAE, TALL, 광학 흐름, LipForensics로 시간적 불일치를 탐지하고, rPPG v2 4-ROI, FACS 46 AU 미세표정, 6DoF 머리포즈 역학으로 생리학적 불가능 패턴을 검출합니다.</div><div class="feature-section"><div class="feature-section-title">🧬 생체 분석 (v2 확장)</div><ul><li><strong>rPPG v2</strong> — CHROM+POS 이중 알고리즘, 이마/양볼/턱 4개 ROI 독립 분석</li><li><strong>FACS</strong> — 46개 Action Unit 기반 미세표정(0.04~0.2초) 탐지</li><li><strong>머리 포즈</strong> — 6DoF 물리적 관성 검증</li><li><strong>VideoMAE</strong> — Masked Autoencoder 기반 시공간 패턴</li><li><strong>LipForensics</strong> — 립싱크 10~50ms 미세 시간차 탐지 (95%+ Wav2Lip)</li></ul></div>` },
+    audiomod: { icon: '🎵', title: '오디오 포렌식 (Audio Forensics)', badge: 'Phase 4 · 6 modules · SSL/AASIST/Vocoder', content: `<div class="feature-highlight-box"><strong>음성 복제 6종 전용 탐지.</strong> SSL(Wav2Vec2/HuBERT/WavLM) + AASIST/RawNet2 원시 파형 분석 + 12종 보코더 핑거프린팅으로 xTTS, OpenVoice, VALL-E 등을 탐지합니다.</div><div class="feature-section"><div class="feature-section-title">🎤 핵심 모듈</div><ul><li><strong>SSL 탐지</strong> — Wav2Vec2/HuBERT/WavLM 사전학습 음성 표현 (EER 0.42% 목표)</li><li><strong>AASIST</strong> — 그래프 주의 기반 ASVspoof 5 호환 스푸핑 탐지</li><li><strong>보코더 식별</strong> — 12종 보코더(WaveGlow, HiFi-GAN 등) 핑거프린트 매칭</li><li><strong>SAFF</strong> — 음성-영상 시간적 정합성 98%+ 정확도</li></ul></div>` },
+    defense: { icon: '🛡️', title: '적대적 방어 (Adversarial Defense)', badge: 'Phase 5 · 3 modules · 3-Class/ProactDef/DeepRev', content: `<div class="feature-highlight-box"><strong>공격자 우위를 방어자 우위로 전환.</strong> 3-Class 분류(Real/Fake/Anti-Forensic)로 탐지 회피 시도를 별도 식별하고, 사전 방어 교란으로 딥페이크 생성 품질을 80% 저하시키며, DeepReversion으로 원본 얼굴을 역추적합니다.</div><div class="feature-section"><div class="feature-section-title">🔰 핵심 모듈</div><ul><li><strong>3-Class 분류</strong> — Anti-Forensic 탐지 시 자동 강화 분석 모드</li><li><strong>사전 방어 교란</strong> — 비가시 교란 주입으로 Face Swap 품질 붕괴 유도</li><li><strong>DeepReversion</strong> — 원본 인물 얼굴 복원 (프라이버시 보호 모드 기본)</li></ul></div>` },
+    xaimod: { icon: '⚖️', title: 'XAI & 출처 인증', badge: 'Phase 6 · 5 modules · SHAP/Grad-CAM++/C2PA', content: `<div class="feature-highlight-box"><strong>법적 증거 수준의 설명 가능성.</strong> SHAP 기여도 분석 + Grad-CAM++ 히트맵 + 베이지안 불확실성 정량화로 법원에서 활용 가능한 포렌식 보고서를 자동 생성합니다.</div><div class="feature-section"><div class="feature-section-title">⚖️ 핵심 모듈</div><ul><li><strong>SHAP</strong> — 각 모듈별 판정 기여도 폭포 차트</li><li><strong>Grad-CAM++</strong> — CNN+ViT+DM 다층 히트맵 시각화</li><li><strong>C2PA v2.2</strong> — 콘텐츠 출처 메타데이터 검증</li><li><strong>SynthID</strong> — Google AI 생성물 워터마크 탐지</li><li><strong>pHash</strong> — 핑거프린트 DB로 재배포/변형 실시간 탐지</li></ul></div>` },
+    realtimemod: { icon: '⚡', title: '실시간 & 엣지 (Real-time & Edge)', badge: 'Phase 7 · 3 modules · WebRTC/<500ms/TensorRT', content: `<div class="feature-highlight-box"><strong>Deep-Live-Cam 등 실시간 딥페이크에 대응.</strong> WebRTC로 비디오 스트림을 수신하여 500ms 이내 탐지. 적응형 4단계 라우터, TensorRT/ONNX 모델 증류로 엣지 배포를 지원합니다.</div><div class="feature-section"><div class="feature-section-title">⚡ 핵심 모듈</div><ul><li><strong>WebRTC 파이프라인</strong> — 라이브 스트림 수신 + 경량 모델 체인</li><li><strong>적응형 라우터</strong> — 해상도/FPS/오디오 기반 분석 모드 자동 선택</li><li><strong>모델 증류</strong> — Teacher→Student, INT8/FP16 양자화</li><li><strong>동시 스트림</strong> — 24GB GPU: 4개, 48GB GPU: 8개+</li></ul></div>` },
+    threatmod: { icon: '🌍', title: '위협 인텔리전스 (Threat Intelligence)', badge: 'Phase 8 · Integration · 52 Tools Matrix', content: `<div class="feature-highlight-box"><strong>52종 생성 도구별 위협 현황 매트릭스.</strong> Face Swap 12종, Reenactment 8종, Lip-Sync 7종, DM 이미지 8종, DM 비디오 5종, GAN 6종, Voice Clone 6종에 대한 38개 탐지 모듈 대응 현황을 시각화합니다.</div><div class="feature-section"><div class="feature-section-title">📊 대응 현황</div><ul><li><strong>완전 대응 44종 (84.6%)</strong> — 95%+ 탐지 가능</li><li><strong>부분 대응 8종 (15.4%)</strong> — 비공개 상용 (Sora, ElevenLabs 등)</li><li><strong>미대응 0종 (0.0%)</strong></li><li><strong>트렌드 분석</strong> — 30일간 생성 도구별 탐지 분포 시계열</li></ul></div>` }
 };
 
 const moduleModal = document.getElementById('moduleModal');
@@ -1616,7 +1624,11 @@ const featureModalData = {
                 </div>
             </div>
         `
-    }
+    },
+    // v4.0 new feature keys
+    multiagent: { icon: '🤖', title: '8중 멀티 에이전트 AI', badge: '8 Frameworks · 12 Experts · 38 Nodes', content: `<div class="feature-highlight-box"><strong>8개 AI 프레임워크가 협업하여 38개 탐지 노드와 12명 전문가를 오케스트레이션합니다.</strong></div><div class="feature-section"><div class="feature-section-title">🔧 프레임워크 구성</div><ul><li><strong>LangGraph</strong> — 38-노드 파이프라인 오케스트레이션, 8 Phase 적응형 라우터</li><li><strong>CrewAI</strong> — 12명 전문가 합의 판정 (기존 6 + 신규 6)</li><li><strong>AutoGen</strong> — 9-에이전트 적대적 토론 (도메인별 검찰/변호)</li><li><strong>DSPy</strong> — 에이전트 프롬프트 자동 최적화 (정확도 85%→95%)</li><li><strong>LlamaIndex</strong> — 52종 도구 RAG 위협 인텔리전스</li><li><strong>Handoff Router</strong> — I/O 가드레일 + 할루시네이션 탐지</li><li><strong>PydanticAI</strong> — 타입 안전 구조화 출력 (파싱 100%)</li><li><strong>A2A Protocol</strong> — 분산 에이전트 통신 + 외부 AI 연동</li></ul></div>` },
+    dm: { icon: '🎨', title: 'Diffusion Model 탐지', badge: '15+ DM Tools · 96%+ Detection', content: `<div class="feature-highlight-box"><strong>v2.x의 최대 사각지대였던 DM 기반 생성물에 대한 전용 탐지 엔진.</strong> Stable Diffusion, DALL-E 3, Midjourney, Sora 등 15종+ DM 도구를 96%+ 탐지합니다.</div><div class="feature-section"><div class="feature-section-title">🔬 탐지 기법</div><ul><li><strong>DIRE</strong> — 사전학습 DM으로 이미지 재구성 후 오류 패턴 분석</li><li><strong>DistilDIRE</strong> — 3.2배 속도 향상 경량 버전 (12GB GPU)</li><li><strong>SeDID</strong> — 디노이징 단계별 통계적 오류 분포 분석</li><li><strong>DiffusionFake</strong> — DM+Face Swap 하이브리드 역생성 추적</li><li><strong>3단계 소스 추정</strong> — Real/Synthetic → GAN/DM → 구체적 모델명</li></ul></div>` },
+    audio: { icon: '🎵', title: '오디오 포렌식 엔진', badge: '6 Voice Clones · 12 Vocoders', content: `<div class="feature-highlight-box"><strong>v2.x에서 전혀 대응하지 못하였던 음성 복제 6종에 대한 전용 탐지.</strong> Coqui xTTS, OpenVoice, Tortoise, VALL-E, Bark, ElevenLabs를 탐지합니다.</div><div class="feature-section"><div class="feature-section-title">🎤 탐지 모듈</div><ul><li><strong>SSL</strong> — Wav2Vec2/HuBERT/WavLM 사전학습 음성 표현 (EER 0.42%)</li><li><strong>E2E</strong> — AASIST/RawNet2 원시 파형 직접 분석</li><li><strong>보코더 식별</strong> — 12종 보코더 핑거프린트 → TTS 시스템 역추적</li><li><strong>SAFF</strong> — 음성-영상 정합성 98%+ 정확도 분석</li></ul></div>` }
 };
 
 const featureModal = document.getElementById('featureModal');
@@ -1671,5 +1683,5 @@ document.addEventListener('keydown', (e) => {
 // Console Welcome Message
 // ========================================
 console.log('%c\u{1F50D} TruthLens DeepFake Detection System', 'font-size: 20px; font-weight: bold; color: #4f91ff;');
-console.log('%cPowered by LangGraph + CrewAI + AutoGen + Ollama', 'font-size: 14px; color: #8b5cf6;');
-console.log('%cVersion 2.8.0', 'font-size: 12px; color: #10b981;');
+console.log('%cPowered by 8-Framework Multi-Agent AI (LangGraph + CrewAI + AutoGen + DSPy + LlamaIndex + PydanticAI + Handoff + A2A)', 'font-size: 14px; color: #8b5cf6;');
+console.log('%cVersion 4.0 | 38 Detection Modules | 12 CrewAI Experts | 52 Tools Coverage', 'font-size: 12px; color: #10b981;');
