@@ -916,13 +916,10 @@ body {
 
 /* Dashboard New Sidebar Badges */
 .sidebar-new-badge {
-    position: relative;
-}
-.sidebar-new-badge::after {
-    content: 'NEW'; font-size: 0.55rem; font-weight: 700;
+    font-size: 0.55rem; font-weight: 700;
     background: var(--color-neon-emerald); color: white;
     padding: 0.1rem 0.3rem; border-radius: 3px;
-    margin-left: 0.5rem; vertical-align: middle;
+    margin-left: auto; line-height: 1; white-space: nowrap;
 }
 
 /* DM Detection Page */
@@ -1019,7 +1016,9 @@ body {
 .verdict-antiforensic {
     color: var(--color-cosmic-purple); font-weight: 600;
 }
-.pie-antiforensic { color: var(--color-cosmic-purple); }
+.pie-antiforensic {
+    background: rgba(139, 92, 246, 0.2); color: var(--color-cosmic-purple);
+}
 
 /* Threshold Anti-Forensic */
 .threshold.antiforensic {
@@ -1048,16 +1047,93 @@ body {
     background: rgba(139, 92, 246, 0.2); color: var(--color-cosmic-purple);
 }
 
-/* 8-column grid for differentiators */
+/* Version Banner Stats */
+.version-stat {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    font-size: 0.85rem; color: var(--color-slate-400);
+    padding: 0.3rem 0.75rem; background: var(--glass-bg);
+    border: 1px solid var(--glass-border); border-radius: 6px;
+}
+.version-stat strong { color: var(--color-slate-300); font-weight: 700; }
+.version-stat strong.highlight {
+    color: var(--color-neon-emerald); font-weight: 800;
+}
+.version-label {
+    font-size: 1.1rem; font-weight: 700; color: var(--color-slate-400);
+}
+
+/* SHAP Bar Row (dashboard XAI page) */
+.shap-bar-row {
+    display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem;
+}
+.shap-bar-row .shap-label {
+    width: 110px; color: var(--color-slate-400); text-align: right; flex-shrink: 0; font-size: 0.8rem;
+}
+.shap-bar-row .shap-bar {
+    height: 16px; border-radius: 4px; transition: width 0.8s ease; min-width: 4px;
+}
+.shap-bar-row .shap-val {
+    width: 50px; font-size: 0.75rem; font-weight: 600; flex-shrink: 0;
+}
+.shap-positive { background: linear-gradient(90deg, rgba(16,185,129,0.6), var(--color-neon-emerald)); }
+.shap-negative { background: linear-gradient(90deg, rgba(239,68,68,0.6), var(--color-warm-red)); }
+
+/* Grad-CAM Box */
+.gradcam-box {
+    padding: 2rem; text-align: center; font-size: 0.85rem; color: var(--color-slate-400);
+    border: 2px dashed rgba(79, 145, 255, 0.2); border-radius: 8px;
+    background: rgba(79, 145, 255, 0.03); margin-top: 0.75rem;
+}
+
+/* Threat Intelligence Numbers */
+.threat-num {
+    display: block; font-size: 2rem; font-weight: 800; color: var(--color-neon-emerald);
+}
+.threat-num.threat-warn {
+    color: var(--color-amber);
+}
+
+/* Realtime Metrics */
+.realtime-metrics {
+    display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.realtime-metric {
+    display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
+    padding: 0.75rem 1.25rem; background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px;
+    font-size: 0.8rem; color: var(--color-slate-400);
+}
+.realtime-val {
+    font-size: 1.5rem; font-weight: 800; color: var(--color-quantum-blue);
+}
+
+/* Stream Box */
+.stream-box {
+    padding: 2rem; text-align: center; font-size: 0.85rem; color: var(--color-slate-400);
+    border: 2px dashed rgba(79, 145, 255, 0.2); border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Diff Card Click Hint */
+.diff-click-hint {
+    font-size: 0.75rem; color: var(--color-slate-600); margin-top: 0.75rem;
+    cursor: pointer; transition: color 0.2s;
+}
+.diff-click-hint:hover { color: var(--color-quantum-blue); }
+
+/* Desktop grid overrides for 8+ items */
 @media (min-width: 1024px) {
     .differentiators-grid {
         grid-template-columns: repeat(4, 1fr);
     }
-}
-
-/* 8-column stats */
-@media (min-width: 1024px) {
     .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .crew-experts {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .v4-frameworks-grid {
         grid-template-columns: repeat(4, 1fr);
     }
 }
@@ -1067,6 +1143,10 @@ body {
     .version-stats { justify-content: flex-start; }
     .v4-frameworks-grid { grid-template-columns: 1fr; }
     .realtime-grid { grid-template-columns: 1fr; }
+    .realtime-metrics { flex-direction: column; align-items: stretch; }
     .dm-modules-grid { grid-template-columns: 1fr 1fr; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .crew-experts { grid-template-columns: repeat(2, 1fr); }
+    .shap-bar-row .shap-label { width: 80px; font-size: 0.7rem; }
+    .threat-summary { flex-direction: column; align-items: center; }
 }
