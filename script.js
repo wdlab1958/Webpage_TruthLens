@@ -246,4 +246,4 @@ document.querySelectorAll('.tag').forEach(tag => {
 // ========================================
 console.log('%c\u{1F50D} TruthLens v4.4.0 DeepFake Detection Platform', 'font-size: 20px; font-weight: bold; color: #4f91ff;');
 console.log('%c40 Detection Modules | 8 Multi-Agent Frameworks | OWL Ontology', 'font-size: 14px; color: #8b5cf6;');
-console.log('%cA3 Security Co.,Ltd. | AI R&D Center', 'font-size: 12px; color: #10b981;');
+console.log('%cWDLAB@2023-2026 Co.,Ltd. | AI R&D Center', 'font-size: 12px; color: #10b981;');

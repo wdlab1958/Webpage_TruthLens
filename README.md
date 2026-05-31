@@ -45,7 +45,7 @@ TruthLens는 영상, 음성, 이미지, 문서 등 다양한 형식의 미디어
 | 10 | **Platform Infrastructure** | API/Core/Gateway/Dashboard/SDK/DevOps 93개 기능 | **6개 모달** |
 | 11 | **Document Downloads** | QR 코드 + 3종 PDF 다운로드 (User Guide, All Features, Full Package) | - |
 | 12 | **v4.4.0 Changes** | v4.3.0 대비 +13 기능 (신규 10 + 개선 7) | **6개 모달** |
-| 13 | **Footer** | A3 Security Co.,Ltd. 정보, Compliance, 저작권 | - |
+| 13 | **Footer** | WDLAB@2023-2026 Co.,Ltd. 정보, Compliance, 저작권 | - |
 
 **총 모달 수: 79개** (Core 9 + Modules 45 + Frameworks 5 + Forensic 8 + Platform 6 + Changes 6)
 
@@ -264,13 +264,13 @@ npx serve .
 
 MIT License
 
-Copyright (c) 2024-2026 A3 Security Co.,Ltd. TruthLens DeepFake Detection System
+Copyright (c) 2024-2026 WDLAB@2023-2026 Co.,Ltd. TruthLens DeepFake Detection System
 
 ---
 
 ## Author
 
-**A3 Security Co.,Ltd. — AI R&D Center**
+**WDLAB@2023-2026 Co.,Ltd. — AI R&D Center**
 
 - Editor: Brian Lee
 - System Version: TruthLens v4.4.0
